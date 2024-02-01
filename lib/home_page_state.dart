@@ -17,14 +17,12 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text('App Bar')),
+      appBar: AppBar(
+          title: Text('App Bar'),
+        actions: [SwitchTheme()],
+      ),
       body: Center(
-        child: Switch(
-          value: AppController.instance.isDarkTheme,
-          onChanged: (value)  {
-            AppController.instance.changeTheme();
-          }
-        )
+        child: Text('Contador: $counter')
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
@@ -35,6 +33,20 @@ class HomePageState extends State<HomePage> {
           });
         },
       ),
+    );
+  }
+
+}
+
+
+class SwitchTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+        value: AppController.instance.isDarkTheme,
+        onChanged: (value)  {
+          AppController.instance.changeTheme();
+        }
     );
   }
 
