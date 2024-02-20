@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ola_mundo/app_controller.dart';
 import 'package:ola_mundo/login_page.dart';
+import 'package:ola_mundo/tinder_login_page.dart';
 
 import 'home_page_state.dart';
 
@@ -17,7 +18,7 @@ class AppWidget extends StatelessWidget {
               appBarTheme: const AppBarTheme(backgroundColor: Colors.red)),
           initialRoute: '/',
           routes: {
-            '/': (context) => LoginPage(),
+            '/': (context) => TinderLoginPage(),
             '/home': (context) => HomePage()
           }
       );
